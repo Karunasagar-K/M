@@ -87,7 +87,6 @@ def data_understanding(df):
     
     return df
 
-
 def data_preprocessing(df):
     #Diagnosis - Checking for Null values
     missing_values = df.isna().sum()
@@ -221,7 +220,6 @@ def check_class_balance(Target):
     imbalance_ratio = majority_class_count / minority_class_count
     return imbalance_ratio != 1.0
 
-
 def perform_classification(X_train, X_test, y_train, y_test):
     classifiers = {
         'Logistic Regression': LogisticRegression(),
@@ -268,7 +266,6 @@ def perform_classification(X_train, X_test, y_train, y_test):
 
     return best_model_classifier,best_model_name
 
-    
 def perform_regression(X_train, y_train, X_test, y_test):
     """
     Perform regression on the dataset.
@@ -332,7 +329,6 @@ def perform_regression(X_train, y_train, X_test, y_test):
     best_rmse = pivot_table.loc[best_algorithm, 'RMSE']
 
     return pivot_table, best_algorithm, best_r2
-
 
 def main():
     #st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -460,7 +456,6 @@ def main():
                         prediction = model.predict(input_data)
 
                     st.write(f"Predicted {Target} value using {best_algorithm}: {prediction[0]}")
-
 
 if __name__ == "__main__":
     main()
